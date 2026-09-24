@@ -1,0 +1,74 @@
+%--------------------------------
+% Introdução 
+%-------------------------------
+\chapter{Introdução} \label{Introdução}
+A eficiência energética tem se tornado um aspecto cada vez mais relevante no contexto das unidades consumidoras, tanto do ponto de vista econômico quanto operacional. Nesse cenário, o fator de potência (FP) destaca-se como um importante indicador da qualidade e do aproveitamento da energia elétrica, uma vez que expressa a relação entre a potência ativa, efetivamente convertida em trabalho útil, e a potência aparente fornecida pela rede elétrica. Sendo assim, um baixo fator de potência está diretamente associado à presença excessiva de cargas reativas, como motores elétricos, transformadores e outros equipamentos indutivos, resultando em aquecimento dos condutores, sobrecarga de equipamentos e aumento de perdas elétricas, reduzindo a eficiência energética geral do sistema e prejudicando o desempenho dos dispositivos de utilização \cite{TecnicasDeMelhoriasFP}.
+
+No Brasil, valores de fator de potência abaixo de 0,92 em unidades consumidoras podem acarretar penalidades aplicadas pelas concessionárias de energia, elevando os custos operacionais das unidades e, em certos casos, levando à exigência formal de correção do FP conforme regulamentações da Agência Nacional de Energia Elétrica (ANEEL, resolução nº 456/2010). Essas penalidades têm o objetivo de incentivar o uso mais eficiente da rede elétrica, uma vez que um FP reduzido implica maior demanda por potência aparente e, consequentemente, maior utilização da capacidade da rede, que poderia ser destinada a outras cargas \cite{Baixofatordepotencia}.
+
+Para detectar e, eventualmente, corrigir valores baixos de fator de potência, torna-se necessário dispor de sistemas capazes de registrar com precisão os principais parâmetros elétricos, como tensão, corrente, potência ativa e reativa, e o próprio FP, em intervalos de tempo reduzidos. Dispositivos como os medidores inteligentes (\textit{smart meters}) fazem parte das tecnologias emergentes que permitem a aquisição automatizada e contínua desses dados, suportando aplicações de controle e otimização de redes elétricas modernas \cite{MedidoresInteligentes}. Esses dispositivos possibilitam leituras em tempo quase real, permitindo análises mais detalhadas do comportamento energético de uma instalação.
+
+Entretanto, mesmo com a disponibilidade de medidores inteligentes, o monitoramento do fator de potência ainda é, em muitas aplicações, realizado de forma predominantemente reativa, limitando-se ao registro de valores após a ocorrência de variações significativas. Essa limitação torna-se ainda mais crítica no contexto das \textit{smart grids}, nas quais grandes volumes de dados elétricos estão disponíveis, mas ainda existem lacunas quanto ao uso desses dados para a análise inteligente do comportamento das cargas e para o suporte à tomada de decisões mais proativas \cite{MedidoresInteligentes}.
+
+\newpage
+Diante desse cenário, este trabalho propõe o desenvolvimento de um sistema de monitoramento elétrico baseado na integração entre sensoriamento, comunicação IoT e modelos de aprendizado de máquina, capaz de identificar o comportamento de diferentes tipos de carga e estimar o fator de potência em tempo real.
+
+% --------------------------------------
+% Motivação e Justificativa
+% --------------------------------------
+\section{Motivação e justificativa}
+Com o avanço da inteligência artificial e o crescente consumo de energia elétrica, torna-se cada vez mais necessário o uso de sistemas capazes de caracterizar e monitorar cargas, permitindo estimar comportamentos e subsidiar o planejamento energético. Em ambientes industriais e comerciais, a identificação precisa do perfil das cargas e o monitoramento contínuo do fator de potência são fundamentais para a eficiência operacional, a segurança das instalações e a prevenção de penalidades regulatórias.
+
+Nesse contexto, as redes neurais artificiais têm se tornado alternativas promissoras, capazes de extrair padrões relevantes e identificar comportamentos associados ao perfil das cargas elétricas. A partir da análise de grandezas elétricas, esses modelos podem auxiliar na caracterização das cargas conectadas ao sistema, bem como na estimativa de variáveis relevantes para a avaliação da qualidade da energia. Paralelamente, o avanço das tecnologias de Internet das Coisas (IoT) tem possibilitado a coleta e transmissão de dados elétricos em tempo real por meio de dispositivos de baixo custo, permitindo a construção de sistemas de monitoramento inteligentes e distribuídos.
+
+Apesar dos avanços em medição elétrica e IoT, ainda são escassas as soluções que integram aquisição de dados, aprendizado de máquina e monitoramento em tempo real, especialmente em plataformas de baixo custo e fácil replicação. Nesse contexto, justifica-se o desenvolvimento de um sistema que una essas tecnologias para oferecer monitoramento inteligente e acessível.
+
+% --------------------------------------
+% Objetivos
+% --------------------------------------
+\section{Objetivos}
+Desenvolver um sistema inteligente de monitoramento elétrico acessível e em tempo real capaz de classificar diferentes tipos de cargas e estimar o fator de potência, integrando sensoriamento de baixo custo, comunicação IoT e modelos de aprendizado de máquina.
+
+\subsection{Objetivos Específicos}
+\begin{itemize}    
+    \item Realizar a aquisição de grandezas elétricas utilizando um sensor de baixo custo;
+
+    \item Construir uma base de dados experimental contendo diferentes configurações de cargas elétricas (resistivas, indutivas, capacitivas e mistas), obtidas por meio de medições em ambiente laboratorial;
+    
+    \item Realizar uma análise estatística dos dados coletados para apoiar o desenvolvimento dos modelos de aprendizado de máquina;
+    
+    \item Desenvolver modelos de aprendizado de máquina para classificação de cargas e estimativa do fator de potência;
+    
+    \item Realizar a integração da aquisição de dados e da comunicação IoT em uma plataforma acessível para processamento dos modelos;
+    
+    \item Realizar a integração dos modelos treinados ao sistema de processamento para inferência e validação em tempo real sob condições controladas;
+    
+    \item Desenvolver uma interface de monitoramento para visualização em tempo real das grandezas elétricas medidas e dos resultados obtidos pelos modelos.
+\end{itemize}
+
+%-------------
+% Trabalhos Relacionados/Revisão da Literatura
+%-------------
+\section{Trabalhos Relacionados}
+Diversos trabalhos na literatura têm investigado a aplicação de técnicas de aprendizado de máquina no contexto de sistemas elétricos, especialmente na análise de dados energéticos e na modelagem de variáveis associadas ao consumo de energia e à qualidade da energia elétrica. Essas abordagens buscam auxiliar o gerenciamento energético, a detecção de ineficiências e a tomada de decisões em sistemas de potência.
+
+Entre os métodos utilizados, as Redes Neurais Artificiais (RNAs) destacam-se como ferramentas eficazes para a modelagem de fenômenos não lineares presentes em sistemas elétricos. \citeonline{Abelem1994} investigou o uso de RNAs na modelagem de séries temporais, demonstrando que esses modelos são capazes de capturar relações complexas entre variáveis e representar adequadamente comportamentos dinâmicos observados em diferentes tipos de dados.
+
+Em aplicações no domínio energético, \citeonline{2BrunoMontibeller} analisaram o uso de técnicas de inteligência artificial na previsão do consumo de energia elétrica em instalações, evidenciando que modelos baseados em redes neurais apresentam desempenho satisfatório mesmo em ambientes com comportamento dinâmico e não linear. De forma complementar, o estudo apresentado em \citeonline{5FerreiraMantiniano} avalia o desempenho de redes neurais do tipo \textit{Multilayer Perceptron} (MLP) na modelagem de variáveis energéticas, destacando que essa arquitetura, quando adequadamente configurada, pode apresentar bons resultados mesmo com estruturas relativamente simples.
+
+No que se refere especificamente ao fator de potência, \citeonline{bayindir2009} propôs um sistema de correção inteligente baseado em redes neurais artificiais, demonstrando que técnicas de aprendizado de máquina podem ser utilizadas para identificar padrões de comportamento do sistema elétrico e auxiliar em estratégias de compensação do fator de potência. Estudos mais recentes também exploram a aplicação de algoritmos de aprendizado de máquina na análise e estimativa dessa variável. Em \citeonline{gamezmedina2022}, por exemplo, é apresentada uma abordagem para previsão do fator de potência em sistemas trifásicos utilizando dados reais de medições elétricas, obtendo bons níveis de acurácia. De forma complementar, \citeonline{faccin2024} realiza uma análise comparativa entre diferentes algoritmos de aprendizado de máquina aplicados a variáveis energéticas, evidenciando a competitividade de modelos baseados em MLP em termos de desempenho e simplicidade computacional.
+
+A partir da análise dos trabalhos apresentados, observa-se que técnicas de aprendizado de máquina têm sido amplamente utilizadas para análise e modelagem de variáveis elétricas em sistemas de energia. Entretanto, grande parte dos estudos concentra-se na previsão de consumo ou em estratégias específicas de correção do fator de potência, sem explorar, de forma integrada, a aquisição de grandezas elétricas em tempo real, o monitoramento contínuo, a identificação do comportamento das cargas e a estimativa de variáveis relacionadas à qualidade da energia.
+
+% --------------------------------------
+% Contribuições do Trabalho
+% --------------------------------------
+\section{Contribuições do Trabalho}
+Este trabalho busca contribuir para a melhoria da eficiência energética e para a consolidação da aplicação prática de técnicas de aprendizado de máquina em tempo real, disponibilizando uma solução replicável que une sensoriamento, IoT e aprendizado de máquina para monitoramento inteligente de cargas e estimativa do fator de potência.
+
+% --------------------------------------
+% Estrutura do trabalho
+% --------------------------------------
+\section{Estrutura do Trabalho}
+Subsequente a este capítulo, o Capítulo \ref{Fundamentação Teórica} apresenta a fundamentação teórica necessária para a compreensão da pesquisa, abordando conceitos relacionados ao fator de potência, análise de dados energéticos, redes neurais artificiais e técnicas de aprendizado de máquina. O Capítulo \ref{Metodologia} descreve a metodologia proposta, incluindo a definição das variáveis do modelo, a aquisição experimental das medições elétricas e o processo de modelagem e treinamento dos algoritmos de aprendizado de máquina. O Capítulo \ref{Resultados e Discussão} apresenta os resultados obtidos, contemplando a análise da dispersão da base de dados experimental utilizada, a avaliação do desempenho dos modelos desenvolvidos e a validação experimental do sistema proposto. Por fim, o Capítulo \ref{Conclusão} apresenta as conclusões do trabalho, destacando as principais contribuições da pesquisa e as perspectivas para trabalhos futuros.
+

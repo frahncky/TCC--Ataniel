@@ -1,0 +1,18 @@
+% ---
+% RESUMO
+% ---
+\setlength{\absparsep}{18pt} 
+
+\begin{resumo}
+O fator de potência é um indicador fundamental da eficiência energética em sistemas elétricos, sendo seu monitoramento contínuo essencial para evitar penalidades regulatórias e otimizar o consumo de energia. Este trabalho propõe o desenvolvimento de um sistema inteligente de monitoramento elétrico em tempo real, capaz de classificar diferentes tipos de cargas e estimar o fator de potência por meio da integração entre sensoriamento de baixo custo, comunicação baseada em Internet das Coisas (IoT) e modelos de aprendizado de máquina. O sistema foi implementado utilizando o sensor PZEM-004T para aquisição das grandezas elétricas, o microcontrolador NodeMCU ESP8266 para transmissão dos dados via protocolo MQTT e a plataforma Node-RED para processamento e visualização em tempo real. Os modelos de classificação e regressão foram desenvolvidos com base na arquitetura Multilayer Perceptron (MLP), treinados na plataforma Edge Impulse e exportados para execução em ambiente WebAssembly. Para validação experimental, foram coletadas 1000 amostras em ambiente laboratorial controlado para cada uma das oito classes de carga consideradas, totalizando 8000 amostras. Os resultados obtidos demonstram a viabilidade técnica da solução proposta para classificação de cargas e estimativa do fator de potência em tempo real. O sistema desenvolvido destaca-se pelo baixo custo, escalabilidade e potencial de aplicação em cenários reais, contribuindo para o avanço de soluções de monitoramento inteligente no contexto da eficiência energética.
+
+\textbf{Palavras-chave}: Monitoramento elétrico; Fator de potência; Classificação de cargas; Redes neurais artificiais; Internet das Coisas.
+
+\end{resumo}
+
+
+% O fator de potência é um indicador fundamental da eficiência energética em sistemas elétricos, e seu monitoramento contínuo é essencial para evitar penalidades regulatórias e otimizar o consumo de energia. Este trabalho propõe o desenvolvimento de um sistema inteligente de monitoramento elétrico em tempo real, capaz de classificar diferentes tipos de cargas e estimar o fator de potência por meio da integração entre sensoriamento de baixo custo, comunicação IoT e modelos de aprendizado de máquina. O sistema foi implementado utilizando o sensor PZEM-004T para aquisição das grandezas elétricas, o microcontrolador NodeMCU ESP8266 para transmissão dos dados via protocolo MQTT e a plataforma Node-RED para processamento e visualização em tempo real. Os modelos de classificação e regressão foram desenvolvidos com base na arquitetura Multilayer Perceptron (MLP), treinados na plataforma Edge Impulse e exportados para execução em ambiente WebAssembly. Para a validação experimental, foram coletadas 1000 amostras em ambiente laboratorial controlado para cada uma das oito classes de carga consideradas, totalizando 8000 amostras. A qualidade desses dados experimentais reflete-se nos resultados obtidos, que demonstram a viabilidade técnica da solução proposta. O sistema se destaca pelo baixo custo, escalabilidade e capacidade de melhorias para operação em cenários reais, contribuindo para o avanço de sistemas de monitoramento inteligente no contexto da eficiência energética.
+
+% O modelo de classificação atingiu acurácia de 100\%, com valores de precisão, recall e F1-score iguais a 1,0 para todas as classes. O modelo de regressão apresentou erro quadrático médio de \(8,30 \times 10^{-6}\) e erro absoluto médio de 0,00228 no conjunto de teste, com coeficiente de variância explicada de 0,9997.
+
+% \textbf{Palavras-chave}: Aprendizado de máquina; Edge Impulse; Classificação de cargas; Estimativa do fator de potência; Node-RED; Monitoramento em tempo real.

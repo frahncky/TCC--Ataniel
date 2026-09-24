@@ -1,0 +1,34 @@
+\chapter{Conclusão} \label{Conclusão}
+
+Este trabalho apresentou o desenvolvimento de um sistema inteligente de monitoramento elétrico em tempo real, integrando sensoriamento de baixo custo, comunicação IoT e modelos de aprendizado de máquina para classificação de cargas e estimativa do fator de potência. A solução proposta foi implementada utilizando o sensor PZEM-004T para aquisição das grandezas elétricas, o microcontrolador NodeMCU ESP8266 para transmissão dos dados via protocolo MQTT e a plataforma Node-RED para processamento e visualização em tempo real.
+
+Os modelos de aprendizado de máquina, baseados na arquitetura Multilayer Perceptron (MLP), foram treinados na plataforma Edge Impulse a partir de uma base de dados experimental contendo 1000 amostras para cada uma das oito classes de carga consideradas. O modelo de classificação alcançou acurácia de 100\%, com valores de precisão, recall e F1-score iguais a 1,0 para todas as classes, demonstrando excelente capacidade de distinção entre os diferentes tipos de carga. O modelo de regressão apresentou erro quadrático médio de \(8,30 \times 10^{-6}\) e erro absoluto médio de 0,00228 no conjunto de teste, com coeficiente de variância explicada de 0,9997, evidenciando elevada precisão na estimativa do fator de potência.
+
+A validação experimental em bancada confirmou a eficácia do sistema, com o modelo de classificação identificando corretamente o tipo de carga em todos os cenários avaliados e o modelo de regressão apresentando estimativas consistentes com as medições do sensor. A integração com a plataforma Node-RED permitiu o desenvolvimento de um painel de monitoramento intuitivo, possibilitando a visualização em tempo real das grandezas elétricas, da classe de carga identificada e do fator de potência estimado.
+
+Os resultados obtidos demonstram que é viável desenvolver sistemas de monitoramento inteligente de baixo custo combinando tecnologias acessíveis como o PZEM-004T, NodeMCU ESP8266, Node-RED e modelos de aprendizado de máquina. A solução proposta apresenta potencial para melhorias e expansão visando a aplicação em ambientes residenciais, comerciais e/ou industriais, contribuindo para a eficiência energética, a redução de custos operacionais e a prevenção de penalidades regulatórias associadas ao baixo fator de potência.
+
+\section{Trabalhos Futuros}
+A partir dos resultados obtidos, destacam-se as seguintes oportunidades para continuidade e aprimoramento da pesquisa:
+
+\begin{itemize}
+    \item \textbf{Ampliação da base de dados}: expandir o conjunto de amostras para incluir um número maior de configurações de carga e diferentes condições operacionais, aumentando a representatividade e a robustez dos modelos;
+
+    \item \textbf{Combinações mais complexas de cargas}: explorar cenários com múltiplas cargas operando simultaneamente em diferentes combinações, aproximando o sistema das condições reais de operação em instalações elétricas;
+
+    \item \textbf{Avaliação de técnicas mais sofisticadas}: investigar o desempenho de arquiteturas mais avançadas, como redes neurais recorrentes (RNNs) ou redes de memória de longo prazo (LSTM), para capturar dependências temporais mais complexas;
+
+    \item \textbf{Aplicação de TinyML e Edge AI}: implementar os modelos diretamente no microcontrolador utilizando técnicas de TinyML, eliminando a dependência de processamento externo e viabilizando a execução em sistemas com recursos limitados de memória e energia;
+
+    \item \textbf{Integração com sistemas de gerenciamento energético}: o modelo de classificação pode ser empregado para identificação automática do perfil de consumo, permitindo ações corretivas como o acionamento seletivo de bancos de capacitores;
+
+    \item \textbf{Tomada de decisão automatizada}: a classificação em tempo real viabiliza sistemas inteligentes que ajustam automaticamente a operação de equipamentos com base no tipo de carga identificada;
+
+    \item \textbf{Monitoramento preditivo}: a combinação entre classificação de cargas e estimativa do fator de potência pode subsidiar a detecção precoce de falhas e o planejamento de manutenções preventivas;
+
+    % \item \textbf{Otimização para sistemas embarcados}: explorar técnicas de quantização, poda e compressão de modelos para reduzir o consumo de memória e energia, permitindo a execução eficiente em dispositivos de borda;
+
+    \item \textbf{Validação em cenários reais}: testar o sistema em instalações elétricas reais por períodos prolongados, avaliando seu desempenho sob condições variáveis de operação e carga;
+
+    % \item \textbf{Integração com sistemas de correção automática}: acoplar o sistema de monitoramento a dispositivos de compensação de potência reativa, permitindo a correção automática do fator de potência em tempo real.
+\end{itemize}
